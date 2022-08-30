@@ -46,6 +46,15 @@
     text-shadow: 4px 4px 25px #F22222;
     color: #359AF2;
 }
+.inicio a{
+    text-decoration: none;
+    color: #F22222;
+    font-size: 3em;
+}
+.respuestas{
+    color:#359AF2;
+    font-size: 2em;
+}
 
 /* INDEX */
 

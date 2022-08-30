@@ -106,17 +106,16 @@ function obtenerRespuesta(respFunc) {
             document.getElementById("respuesta").value = ""
         }else{
             alert(msjIncorrecto, tipoD)
-            jugadores.puntos -= 1
+            jugadorStorage.puntos -= 1
             document.getElementById("respuesta").value = ""
             botonNull.disabled = true
             bloquearBtn(letraSelect)
         }
     }else{
         alert(msjCorrecto, tipoS)
-            jugadores.puntos += 1
-            console.log(jugadores.puntos)
-            document.getElementById("respuesta").value = ""
-            botonNull.disabled = true
-            bloquearBtn(letraSelect)
+        jugadorStorage.puntos += 1
+        document.getElementById("respuesta").value = ""
+        botonNull.disabled = true
+        bloquearBtn(letraSelect)
     }
 }
