@@ -7,27 +7,28 @@
 
 @font-face {
     font-family: fuente1;
-    src: url(./fuentes/Aboreto/Aboreto-Regular.ttf);
+    src: url(../fuentes/Aboreto/Aboreto-Regular.ttf);
+    
 }
 @font-face {
     font-family: fuente2;
-    src: url(./fuentes/Audiowide/Audiowide-Regular.ttf);
+    src: url(../fuentes/Audiowide/Audiowide-Regular.ttf);
 }
 @font-face {
     font-family: fuente3;
-    src: url(./fuentes/Codystar/Codystar-Regular.ttf);
+    src: url(../fuentes/Codystar/Codystar-Regular.ttf);
 }
 @font-face {
     font-family: fuente4;
-    src: url(./fuentes/Fredericka_the_Great/FrederickatheGreat-Regular.ttf);
+    src: url(../fuentes/Fredericka_the_Great/FrederickatheGreat-Regular.ttf);
 }
 @font-face {
     font-family: fuente5;
-    src: url(./fuentes/Macondo/Macondo-Regular.ttf);
+    src: url(../fuentes/Macondo/Macondo-Regular.ttf);
 }
 @font-face {
     font-family: fuente6;
-    src: url(./fuentes/Rubik_Dirt/RubikDirt-Regular.ttf);
+    src: url(../fuentes/Rubik_Dirt/RubikDirt-Regular.ttf);
 }
 
 
@@ -63,7 +64,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
-    background-image: url(./img/computer-1869236.jpg);
+    background-image: url(../img/computer-1869236.jpg);
     background-size: cover;
     color: #F2E205;
     text-align: center;
@@ -116,7 +117,7 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(3, auto);
-    background-image: url(./img/computer-1869236.jpg);
+    background-image: url(../img/computer-1869236.jpg);
     background-size: cover;
     color: #F2E205;
     text-align: center;
