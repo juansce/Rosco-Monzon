@@ -1,18 +1,3 @@
-/* Desafio entregable: 
-
-INTERACTUAR CON HTML
-
-Alumno: Monzon, Juan Carlos
-Tutor: Cantora, Matias
-CODERHOUSE - JAVASCRIPT */
-
-/* JUEGO: ROSCO - PASA PALABRA */
-
-
-
-
-//Clases y objetos
-
 class RoscoPreguntas{
     constructor(letra, pregunta, respuesta){
         this.letra = letra
@@ -40,6 +25,6 @@ let puntos = document.getElementById("puntosJugador")
 const botResp = document.getElementById("buttResp")
 botResp.addEventListener("click",() => {
     const respPlayer = document.getElementById("respuesta").value.toLowerCase()
-    obtenerRespuesta(respPlayer)  
+    obtenerRespuesta(respPlayer)
     puntos.innerHTML = `Tenes ganados ${jugadorStorage.puntos} puntos`
 })

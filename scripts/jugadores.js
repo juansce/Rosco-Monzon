@@ -5,7 +5,7 @@ class Jugante{
     }
 }
 
-let jugadores = []
+let jugadores = JSON.parse(localStorage.getItem("jugadores")) ?? []
 
 localStorage.setItem("players", "jugadores")
 
@@ -16,5 +16,3 @@ btnJugador.addEventListener("click", () => {
     localStorage.setItem("players", JSON.stringify(jugadores))
     location.href = "../paginas/juego.html"
 })
-
-

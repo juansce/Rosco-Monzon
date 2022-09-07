@@ -22,20 +22,20 @@
         <div class="contenedorJuego" id="idJuego">
             <div class="jugador" id="nomJugador"></div>
             <div><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="boton boton1 " onclick="cargarModal('a')" id="botona">A</button></div>
-            <div><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="boton boton2 " onclick="cargarModal('e')" id="boton2">E</button></div>
-            <div><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="boton boton3 " onclick="cargarModal('i')" id="boton3">I</button></div>
-            <div><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="boton boton4 " onclick="cargarModal('o')" id="boton4">O</button></div>
-            <div><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="boton boton5 " onclick="cargarModal('u')" id="boton5">U</button></div>
+            <div><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="boton boton2 " onclick="cargarModal('e')" id="botone">E</button></div>
+            <div><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="boton boton3 " onclick="cargarModal('i')" id="botoni">I</button></div>
+            <div><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="boton boton4 " onclick="cargarModal('o')" id="botono">O</button></div>
+            <div><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="boton boton5 " onclick="cargarModal('u')" id="botonu">U</button></div>
             <div class="puntaje" id="puntosJugador"></div>
         </div>
     </section>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog" id="modalDialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <div class="modal-header row">
+                    <p class="modal-title" id="exampleModalLabel"></p>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="pregunta"></div>
@@ -47,8 +47,7 @@
                 </div>
             </div>
         </div>
-        <div id="liveAlertPlaceholder"></div>
-
+        <div id="liveAlertPlaceholder" ></div>
     </div>
 
     <footer class="pie">

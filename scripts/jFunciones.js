@@ -2,6 +2,7 @@
 let letraSelect = ""
 let contador = 0
 const botonNull = document.getElementById("buttResp")
+const alertPlaceholder = document.getElementById("liveAlertPlaceholder")
 
 
 //genera un vector de objetos ingresados por pantalla
@@ -35,63 +36,55 @@ function cargarModal(letra) {
 }
 
 
-function alert(message, type){
-    const alertPlaceholder = document.getElementById("liveAlertPlaceholder")
+function alert(message, type) {
     resetAlert()
     const wrapper = document.createElement('div')
     wrapper.innerHTML = `
         <div class="alert alert-${type} alert-dismissible" role="alert">
             <div>${message}</div>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
         `
     alertPlaceholder.append(wrapper)
-}
-function resetAlert(){
-    const alertPlaceholder = document.getElementById("liveAlertPlaceholder")
-    alertPlaceholder.innerHTML=""
+    setTimeout(() => {
+        wrapper.remove()
+    }, 1200)
 }
 
-function setContador(){
+// no esta siendo usada...
+function cerrarModal() {
+    const modal = document.getElementById("modalDialog")
+    setTimeout(() => {
+        modal.remove()
+    }, 1600)
+}
+
+function resetAlert() {
+    alertPlaceholder.innerHTML = ""
+}
+
+function setContador() {
     contador = 0
 }
 
-function setLetra(letra){
+function setLetra(letra) {
     letraSelect = letra
 }
 
-function bloquearBtn(letra){
-    let btn = ""
-    switch(letra){
-        case 'a':
-            btn = document.getElementById("boton1")
-            btn.disabled = true
-            break
-        case 'e':
-            btn = document.getElementById("boton2")
-            btn.disabled = true
-            break
-        case 'i':
-            btn = document.getElementById("boton3")
-            btn.disabled = true
-            break
-        case 'o':
-            btn = document.getElementById("boton4")
-            btn.disabled = true
-            break
-        case 'u':
-            btn = document.getElementById("boton5")
-            btn.disabled = true
-            break
-        default: 
-            break       
-    }
+function bloquearBtn(letra) {
+
+    const vocales = {
+        "a": document.getElementById("botona"),
+        "e": document.getElementById("botone"),
+        "i": document.getElementById("botoni"),
+        "o": document.getElementById("botono"),
+        "u": document.getElementById("botonu")
+    }    
+    return vocales[letra].disabled = true
 }
 
 
 function obtenerRespuesta(respFunc) {
-    let msjCorrecto = "CORRECTO" 
-    let msjCuidado = "ICORRECTO. Prueba otra vez."
+    let msjCorrecto = "CORRECTO"
+    let msjCuidado = "ICORRECTO. Prueba otra vez..."
     let msjIncorrecto = "Lo siento, perdiste un punto."
     let tipoS = "success"
     let tipoD = "danger"
@@ -99,19 +92,19 @@ function obtenerRespuesta(respFunc) {
 
     const respuesta = pasaPalabraPreguntaVocales.some(palabra => (palabra.respuesta == respFunc && letraSelect == palabra.letra))
 
-    if(respuesta == false){
-        if(contador <2){
-            contador ++
+    if (respuesta == false) {
+        if (contador < 2) {
+            contador++
             alert(msjCuidado, tipoW)
             document.getElementById("respuesta").value = ""
-        }else{
+        } else {
             alert(msjIncorrecto, tipoD)
             jugadorStorage.puntos -= 1
             document.getElementById("respuesta").value = ""
             botonNull.disabled = true
             bloquearBtn(letraSelect)
         }
-    }else{
+    } else {
         alert(msjCorrecto, tipoS)
         jugadorStorage.puntos += 1
         document.getElementById("respuesta").value = ""

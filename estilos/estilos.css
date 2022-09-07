@@ -112,6 +112,76 @@
 
 /* JUEGO */
 
+.modal-content{
+    background-color: #000000bd;
+    border:6px double #f22222a2;
+    box-shadow: 0px 0px 15px 20px #359af296;
+    box-shadow: 15px 15px 50px 10px #f7850496;
+    color:#ffffff
+}
+.modal-header{
+    border:6px double #f22222a2;
+    font-size: 7.5rem;   
+    text-transform: uppercase;
+    text-shadow: 1px 1px 25px  #F2E205;
+    text-align: center;
+    margin: 5px;
+}
+.btn-close{
+    font-size: 1rem;
+    background-color: #F22222;
+    box-shadow: 0px 0px 5px 5px #359af2;
+}
+.modal-body{
+    font-size: 1.5rem;
+    text-shadow: 10px 10px 25px  #000000;
+    border:6px double #f22222a2;
+    text-align: center;
+    text-transform:capitalize;
+    margin: 5px;
+}
+#respuesta{
+    font-size: 1.5rem;
+    background-color: #030303;
+    border-color: #F22222;
+    color: #359AF2;
+}
+.modal-footer{
+    border:6px double #f22222a2;
+    margin: 5px;
+    justify-content: space-around;
+}
+#buttResp{
+    width: 300px;
+    height: 50px;
+    background-color: #359af29d;
+    box-shadow:0px 0px 15px #F2E205 ;
+    font-size: 1.8rem;
+    text-shadow: 10px 10px 25px  #ffffff;
+}
+.alert{
+    width: 600px;
+    height: 80px;
+    -ms-zoom-animation: initial;
+    text-align: center;
+    font-size: 2rem;
+}
+.alert-warning {
+    --bs-alert-color: #523e04;
+    --bs-alert-bg: #f2e205c9;
+    --bs-alert-border-color: #e2e2be;
+}
+.alert-danger {
+    --bs-alert-color: #330509;
+    --bs-alert-bg: #f22222a2;
+    --bs-alert-border-color: #f5c2c7;
+}
+.alert-success {
+    --bs-alert-color: #13472f;
+    --bs-alert-bg: #02fd24;
+    --bs-alert-border-color: #badbcc;
+}
+
 .contenedorJuego{
     width: 100%;
     display: grid;
