@@ -20,20 +20,27 @@ function vectorInstancer(vecTor) {
     }
 }
 
-function cargarModal(letra) {
+
+
+function asignarLetraBoton(letra) {
     setLetra(letra)
     setContador()
     resetAlert()
     botonNull.disabled = false
-    pasaPalabraPreguntaVocales.forEach(caracter => {
-        if (letra === caracter.letra) {
-            const titulo = document.getElementById("exampleModalLabel")
-            titulo.innerHTML = caracter.letra
-            const pregunta = document.getElementById("pregunta")
-            pregunta.innerHTML = caracter.pregunta
-        }
+    traerRoscoVocales().then(vocales => {
+        vocales.forEach(palabra => {
+            if (letra === palabra.letra) {
+                const titulo = document.getElementById("exampleModalLabel")
+                titulo.innerHTML = palabra.letra
+                const pregunta = document.getElementById("pregunta")
+                pregunta.innerHTML = palabra.pregunta
+            }
+        });
     })
 }
+
+
+
 
 
 function alert(message, type) {
@@ -77,7 +84,7 @@ function bloquearBtn(letra) {
         "i": document.getElementById("botoni"),
         "o": document.getElementById("botono"),
         "u": document.getElementById("botonu")
-    }    
+    }
     return vocales[letra].disabled = true
 }
 
@@ -90,25 +97,27 @@ function obtenerRespuesta(respFunc) {
     let tipoD = "danger"
     let tipoW = "warning"
 
-    const respuesta = pasaPalabraPreguntaVocales.some(palabra => (palabra.respuesta == respFunc && letraSelect == palabra.letra))
+    traerRoscoVocales().then(vocales => {
+        let respuesta = vocales.some(vocales => (vocales.respuesta == respFunc && letraSelect == vocales.letra))
 
-    if (respuesta == false) {
-        if (contador < 2) {
-            contador++
-            alert(msjCuidado, tipoW)
-            document.getElementById("respuesta").value = ""
+        if (respuesta == false) {
+            if (contador < 2) {
+                contador++
+                alert(msjCuidado, tipoW)
+                document.getElementById("respuesta").value = ""
+            } else {
+                alert(msjIncorrecto, tipoD)
+                jugadorStorage.puntos -= 1
+                document.getElementById("respuesta").value = ""
+                botonNull.disabled = true
+                bloquearBtn(letraSelect)
+            }
         } else {
-            alert(msjIncorrecto, tipoD)
-            jugadorStorage.puntos -= 1
+            alert(msjCorrecto, tipoS)
+            jugadorStorage.puntos += 1
             document.getElementById("respuesta").value = ""
             botonNull.disabled = true
             bloquearBtn(letraSelect)
         }
-    } else {
-        alert(msjCorrecto, tipoS)
-        jugadorStorage.puntos += 1
-        document.getElementById("respuesta").value = ""
-        botonNull.disabled = true
-        bloquearBtn(letraSelect)
-    }
+    })
 }
